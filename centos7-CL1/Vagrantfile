@@ -75,7 +75,7 @@ yum install nfs-utils libnfsidmap -y
 systemctl enable rpcbind
 systemctl start rpcbind
 mkdir /mnt/nfsfileshare
-echo "192.168.51.1:/var/nfsfileshare/ /mnt/nfsfileshare nfs rw,sync,hard,intr 0 0" >> /etc/fstab
+grep '/mnt/nfsfileshare' /etc/fctab || echo "192.168.51.1:/var/nfsfileshare/ /mnt/nfsfileshare nfs rw,sync,hard,intr 0 0" >> /etc/fstab
 systemctl enable firewalld
 systemctl start firewalld
 mount 192.168.51.1:/var/nfsfileshare /mnt/nfsfileshare
