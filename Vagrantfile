@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2") do |config|
 # # NFS Server
   config.vm.define "nfs_srv" do |nfs_srv|
